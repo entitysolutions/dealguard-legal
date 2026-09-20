@@ -34,11 +34,12 @@
   li{margin:0 0 8px;}
   strong{font-weight:650;}
   a{color:var(--accent-ink);text-underline-offset:2px;}
+  .callout{background:var(--surface);border:1px solid var(--rule);
+    border-left:3px solid var(--accent);border-radius:8px;padding:2px 16px;margin:18px 0;}
   footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--rule);
     color:var(--muted);font-size:14px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
   footer a{color:var(--muted);}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px;}
-</style>
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px;}</style>
 </head>
 <body>
 <div class="wrap">
@@ -46,52 +47,42 @@
     <span class="logo">Deal<span class="g">Guard</span></span>
     <span class="kicker">Legal</span>
   </header>
-
-  <h1>Privacy Policy</h1>
-  <p class="eff">Effective July 2026</p>
-
-  <p>Deal Guard is built to help you vet a used car before you buy it. We designed it to keep your data on your device. This policy explains what that means.</p>
-
-  <h2>The short version</h2>
-  <ul>
-    <li>Deal Guard has no account and no login.</li>
-    <li>Your deals, saved searches, photos, notes, and reports are stored on your device (and, if you enable iCloud, in your own private iCloud account — never ours).</li>
-    <li>We do not sell your data. We do not use third-party advertising or analytics SDKs. We do not track you across apps or websites.</li>
-  </ul>
-
-  <h2>What stays on your device</h2>
-  <p>Everything you create in the app — tracked deals, saved searches, buyer checklists, photos, notes, and cached vehicle reports — is stored locally using Apple's on-device database. If you turn on iCloud sync, that data syncs through your personal iCloud account so it survives a new phone; it is end-to-end within your Apple account and is not accessible to us.</p>
-
-  <h2>What we send to third parties, and why</h2>
-  <p>To produce a report or listings, the app sends the minimum needed directly from your device to these services:</p>
-  <ul>
-    <li><strong>NHTSA and the EPA</strong> (U.S. government) — the VIN or year/make/model to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
-    <li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings.</li>
-    <li><strong>Anthropic</strong> — if you use an AI feature (deal evaluation, the search concierge, or message drafts), the relevant vehicle details are sent to Anthropic's API to generate that result. This data is not used to train models.</li>
-  </ul>
-  <p>We do not attach your name or an account to these requests, because there isn't one.</p>
-
-  <h2>Camera, location, and notifications</h2>
-  <ul>
-    <li><strong>Camera</strong> is used only to scan a VIN. Scanning happens on your device; images are not uploaded.</li>
-    <li><strong>Location / ZIP</strong> is used only to find local listings and estimate taxes and fees.</li>
-    <li><strong>Notifications</strong>, if you allow them, are used to alert you to new matching listings and price drops.</li>
-  </ul>
-
-  <h2>Payments</h2>
-  <p>Subscriptions are handled by Apple through the App Store. We never see your card or Apple ID. Apple's privacy policy governs that transaction.</p>
-
-  <h2>Deleting your data</h2>
-  <p>You can erase everything at any time in Settings → "Delete all local data." That clears the on-device database, cached reports, and app settings. If iCloud sync is on, deleting on one device removes it from your other devices too.</p>
-
-  <h2>Children</h2>
-  <p>Deal Guard is not directed to children under 13 and does not knowingly collect data from them.</p>
-
-  <h2>Changes</h2>
-  <p>We'll update this policy as the app changes and revise the date above.</p>
-
-  <h2>Contact</h2>
-  <p>Questions? Email <a href="mailto:support@dealguard.app">support@dealguard.app</a>.</p>
+<h1>Privacy Policy</h1>
+<p class="eff">Effective September 2026</p>
+<p>Deal Guard is built to help you vet a used car before you buy it. We designed it to keep your data on your device. This policy explains what that means.</p>
+<h2>The short version</h2>
+<ul>
+<li>Deal Guard has no account and no login.</li>
+<li>Your deals, saved searches, photos, notes, and reports are stored on your device (and, if you enable iCloud, in your own private iCloud account — never ours).</li>
+<li>We do not sell your data. We do not use third-party advertising or analytics SDKs. We do not track you across apps or websites.</li>
+</ul>
+<h2>What stays on your device</h2>
+<p>Everything you create in the app — tracked deals, saved searches, buyer checklists, photos, notes, and cached vehicle reports — is stored locally using Apple's on-device database. If you turn on iCloud sync, that data syncs through your personal iCloud account so it survives a new phone; it is end-to-end within your Apple account and is not accessible to us.</p>
+<h2>What we send to third parties, and why</h2>
+<p>To produce a report or listings, the app sends the minimum needed directly from your device to these services:</p>
+<ul>
+<li><strong>NHTSA and the EPA</strong> (U.S. government) — the VIN or year/make/model to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
+<li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings.</li>
+<li><strong>Anthropic</strong> — if you use an AI feature (deal evaluation, the "Ask about this car" listing chat, or message drafts), the relevant vehicle details are sent to Anthropic's API to generate that result; if you use the contract Fee Scan, the photo you chose of the dealer's paperwork is sent the same way so the fees can be read. None of this data is used to train models, and the photo itself is never saved by the app.</li>
+<li><strong>VinAudit</strong> (an approved NMVTIS data provider) — only if you purchase a vehicle history report and redeem it, the VIN you chose is sent to generate that report. Nothing is sent by merely buying a credit, and never for VINs you don't redeem it on.</li>
+</ul>
+<p>We do not attach your name or an account to these requests, because there isn't one.</p>
+<h2>Camera, location, and notifications</h2>
+<ul>
+<li><strong>Camera</strong> is used to scan a VIN and, if you use the Fee Scan, to photograph the dealer's contract. VIN scanning happens on your device and those images are never uploaded. A contract photo you choose to scan is sent to Anthropic to read the fees; it is not used to train models and is not saved by the app.</li>
+<li><strong>Location / ZIP</strong> is used only to find local listings and estimate taxes and fees.</li>
+<li><strong>Notifications</strong>, if you allow them, are used to alert you to new matching listings and price drops.</li>
+</ul>
+<h2>Payments</h2>
+<p>Subscriptions and one-time purchases are handled by Apple through the App Store. We never see your card or Apple ID. Apple's privacy policy governs that transaction.</p>
+<h2>Deleting your data</h2>
+<p>You can erase everything at any time in Settings → "Delete all local data." That clears the on-device database, cached reports, and app settings. If iCloud sync is on, deleting on one device removes it from your other devices too.</p>
+<h2>Children</h2>
+<p>Deal Guard is not directed to children under 13 and does not knowingly collect data from them.</p>
+<h2>Changes</h2>
+<p>We'll update this policy as the app changes and revise the date above.</p>
+<h2>Contact</h2>
+<p>Questions? Email <a href="mailto:support@dealguard.app">support@dealguard.app</a>.</p>
 
   <footer>
     <span>© 2026 Entity Solutions</span>
