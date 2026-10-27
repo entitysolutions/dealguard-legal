@@ -63,7 +63,7 @@
 <p>To produce a report or listings, the app sends the minimum needed to these services, directly from your device unless noted:</p>
 <ul>
 <li><strong>NHTSA and the EPA</strong> (U.S. government) — the VIN or year/make/model to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
-<li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings. In current versions of the app, Facebook Marketplace searches go through our server, which sends your search terms and the approximate map location of your ZIP.</li>
+<li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings. In current versions of the app, Facebook Marketplace, eBay, OfferUp, and MarketCheck searches go through our server, which sends your search terms and your ZIP or its approximate map location.</li>
 </ul>
 <p>Deal evaluations, the contract Fee Scan, message drafts and the listing chat run entirely on your iPhone (the drafts and chat use Apple's on-device model where your phone has it) and send nothing anywhere.</p>
 <ul>
@@ -71,9 +71,10 @@
 </ul>
 <p>We do not attach your name or an account to these requests, because there isn't one.</p>
 <h2>Our server</h2>
-<p>Deal Guard runs a small server (dealguard-api.entitysolutions.co, operated by Entity Solutions LLC) that passes Premium VIN report and Facebook Marketplace requests to those services, so their keys never ship inside the app. To make sure a request really comes from the Deal Guard app, your device uses Apple's App Attest, which creates a key that stays on your device; our server keeps only its public half. What the server keeps:</p>
+<p>Deal Guard runs a small server (dealguard-api.entitysolutions.co, operated by Entity Solutions LLC) that passes Premium VIN report and marketplace search requests to those services, so their keys never ship inside the app. To make sure a request really comes from the Deal Guard app, your device uses Apple's App Attest, which creates a key that stays on your device; our server keeps only its public half. What the server keeps:</p>
 <ul>
 <li>For each Premium VIN report purchase, Apple's purchase ID and the VIN it was used on, so one purchase can't be used twice. Apple's purchase record does not include your name, Apple ID, or payment details.</li>
+<li>For your free first car, the VIN you chose, tied to the app's App Attest key, so the free car can only be claimed once. Apple's DeviceCheck also marks this iPhone as having used its free car. Apple stores that mark, and we never see a device identifier.</li>
 <li>Daily request counts per device and per IP address, used only to stop abuse, deleted after 30 days.</li>
 </ul>
 <p>It does not keep your search terms, your location, or the reports themselves.</p>
