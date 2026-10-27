@@ -48,28 +48,36 @@
     <span class="kicker">Legal</span>
   </header>
 <h1>Privacy Policy</h1>
-<p class="eff">Effective September 2026</p>
+<p class="eff">Effective October 2026</p>
 <p>Deal Guard is built to help you vet a used car before you buy it. We designed it to keep your data on your device. This policy explains what that means.</p>
 <h2>The short version</h2>
 <ul>
 <li>Deal Guard has no account and no login.</li>
 <li>Your deals, saved searches, photos, notes, and reports are stored on your device (and, if you enable iCloud, in your own private iCloud account — never ours).</li>
 <li>We do not sell your data. We do not use third-party advertising or analytics SDKs. We do not track you across apps or websites.</li>
+<li>A few requests go through our own server so the app doesn't have to carry the keys for paid data services. It keeps very little (see below).</li>
 </ul>
 <h2>What stays on your device</h2>
 <p>Everything you create in the app — tracked deals, saved searches, buyer checklists, photos, notes, and cached vehicle reports — is stored locally using Apple's on-device database. If you turn on iCloud sync, that data syncs through your personal iCloud account so it survives a new phone; it is end-to-end within your Apple account and is not accessible to us.</p>
 <h2>What we send to third parties, and why</h2>
-<p>To produce a report or listings, the app sends the minimum needed directly from your device to these services:</p>
+<p>To produce a report or listings, the app sends the minimum needed to these services, directly from your device unless noted:</p>
 <ul>
 <li><strong>NHTSA and the EPA</strong> (U.S. government) — the VIN or year/make/model to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
-<li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings.</li>
-<li><strong>Anthropic</strong> — if you use an AI feature (deal evaluation, the "Ask about this car" listing chat, or message drafts), the relevant vehicle details are sent to Anthropic's API to generate that result; if you use the contract Fee Scan, the photo you chose of the dealer's paperwork is sent the same way so the fees can be read. None of this data is used to train models, and the photo itself is never saved by the app.</li>
-<li><strong>VinAudit</strong> (an approved NMVTIS data provider) — only if you purchase a Premium VIN report and redeem it, the VIN you chose is sent to generate that report. Nothing is sent by merely buying a credit, and never for VINs you don't redeem it on.</li>
+<li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings. In current versions of the app, Facebook Marketplace searches go through our server, which sends your search terms and the approximate map location of your ZIP.</li>
+<li><strong>Anthropic</strong> — only for message drafts and the listing chat, when those are available: the vehicle details shown in that feature are sent through our server to Anthropic's API to write the response. Anthropic does not use this data to train its models. Deal evaluations and the contract Fee Scan run entirely on your iPhone and send nothing.</li>
+<li><strong>VinAudit</strong> (an approved NMVTIS data provider) — only if you purchase a Premium VIN report and redeem it, the VIN you chose is sent to generate that report, through our server. Nothing is sent by merely buying a credit, and never for VINs you don't redeem it on.</li>
 </ul>
 <p>We do not attach your name or an account to these requests, because there isn't one.</p>
+<h2>Our server</h2>
+<p>Deal Guard runs a small server (dealguard-api.entitysolutions.co, operated by Entity Solutions LLC) that passes Premium VIN report and Facebook Marketplace requests to those services, so their keys never ship inside the app. To make sure a request really comes from the Deal Guard app, your device uses Apple's App Attest, which creates a key that stays on your device; our server keeps only its public half. What the server keeps:</p>
+<ul>
+<li>For each Premium VIN report purchase, Apple's purchase ID and the VIN it was used on, so one purchase can't be used twice. Apple's purchase record does not include your name, Apple ID, or payment details.</li>
+<li>Daily request counts per device and per IP address, used only to stop abuse, deleted after 30 days.</li>
+</ul>
+<p>It does not keep your search terms, your location, or the reports themselves.</p>
 <h2>Camera, location, and notifications</h2>
 <ul>
-<li><strong>Camera</strong> is used to scan a VIN and, if you use the Fee Scan, to photograph the dealer's contract. VIN scanning happens on your device and those images are never uploaded. A contract photo you choose to scan is sent to Anthropic to read the fees; it is not used to train models and is not saved by the app.</li>
+<li><strong>Camera</strong> is used to scan a VIN and, if you use the Fee Scan, to photograph the dealer's contract. Both are read on your device. The images are never uploaded, and the contract photo is not saved; only the fee breakdown is.</li>
 <li><strong>Location / ZIP</strong> is used only to find local listings and estimate taxes and fees.</li>
 <li><strong>Notifications</strong>, if you allow them, are used to alert you to new matching listings and price drops.</li>
 </ul>
