@@ -48,46 +48,62 @@
     <span class="kicker">Legal</span>
   </header>
 <h1>Privacy Policy</h1>
-<p class="eff">Effective October 2026</p>
+<p class="eff">Effective November 2026</p>
 <p>Deal Guard is built to help you vet a used car before you buy it. We designed it to keep your data on your device. This policy explains what that means.</p>
 <h2>The short version</h2>
 <ul>
 <li>Deal Guard has no account and no login.</li>
-<li>Your deals, saved searches, photos, notes, and reports are stored on your device (and, if you enable iCloud, in your own private iCloud account — never ours).</li>
+<li>Your deals, saved searches, photos, notes, and reports are stored on your device (and, if you turn on iCloud, in your own private iCloud database, which we can't access).</li>
 <li>We do not sell your data. We do not use third-party advertising or analytics SDKs. We do not track you across apps or websites.</li>
-<li>A few requests go through our own server so the app doesn't have to carry the keys for paid data services. It keeps very little (see below).</li>
+<li>If you came from one of our ads in App Store search, Apple tells us which ad it was, never who you are. We use that to see which ads pay for themselves.</li>
+<li>Some requests go through our own server so the app doesn't have to carry the keys for paid data services. What it keeps is listed below.</li>
 </ul>
 <h2>What stays on your device</h2>
-<p>Everything you create in the app — tracked deals, saved searches, buyer checklists, photos, notes, and cached vehicle reports — is stored locally using Apple's on-device database. If you turn on iCloud sync, that data syncs through your personal iCloud account so it survives a new phone; it is end-to-end within your Apple account and is not accessible to us.</p>
+<p>Everything you create in the app (tracked deals, saved searches, buyer checklists, photos, notes, and saved vehicle reports) is stored locally using Apple's on-device database. If you turn on iCloud sync, that data syncs through your personal iCloud account so it survives a new phone. It is stored in your private iCloud database, which we can't access.</p>
 <h2>What we send to third parties, and why</h2>
 <p>To produce a report or listings, the app sends the minimum needed to these services, directly from your device unless noted:</p>
 <ul>
-<li><strong>NHTSA and the EPA</strong> (U.S. government) — the VIN or year/make/model to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
-<li><strong>Vehicle-listing sources</strong> (e.g. MarketCheck, eBay, and public marketplace pages) — your search terms and ZIP to find matching listings. In current versions of the app, Facebook Marketplace, eBay, OfferUp, and MarketCheck searches go through our server, which sends your search terms and your ZIP or its approximate map location.</li>
+<li><strong>NHTSA and the EPA</strong> (U.S. government): the VIN or year, make and model, to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
+<li><strong>Vehicle-listing sources</strong> (for example MarketCheck, eBay, and public marketplace pages): your search terms and ZIP to find matching listings. In current versions of the app, Facebook Marketplace, eBay, OfferUp, and MarketCheck searches go through our server, which sends your search terms and your ZIP or its approximate map location.</li>
 </ul>
 <p>Deal evaluations, the contract Fee Scan, message drafts and the listing chat run entirely on your iPhone (the drafts and chat use Apple's on-device model where your phone has it) and send nothing anywhere.</p>
 <ul>
-<li><strong>VinAudit</strong> (an approved NMVTIS data provider) — only if you purchase a Premium VIN report and redeem it, the VIN you chose is sent to generate that report, through our server. Nothing is sent by merely buying a credit, and never for VINs you don't redeem it on.</li>
+<li><strong>Our vehicle history report provider</strong>: when you open a car's report, its VIN goes through our server to our report provider for a free check of whether a CARFAX or AutoCheck report exists for it and how many records it has, so the app can show you before you buy. If you purchase a full history report and redeem it, the VIN you chose is sent the same way to generate that report. Our providers may process VINs outside the United States. Nothing is bought for a VIN you don't redeem a credit on.</li>
+<li><strong>License plate lookup</strong>: if you look a car up by plate, the plate number and state go through our server to our vehicle history provider, which answers with the VIN on file. They may process it outside the United States. If you scan a plate with the camera, the picture is read on your device and only the plate number and state are sent.</li>
+<li><strong>Salvage auction records</strong>: the VIN of the report you're viewing goes through our server to the same provider to check for Copart or IAAI sale records, and, when you open them, to fetch the sale details. The auction photos then load from the auction's own image servers.</li>
 </ul>
 <p>We do not attach your name or an account to these requests, because there isn't one.</p>
 <h2>Our server</h2>
-<p>Deal Guard runs a small server (dealguard-api.entitysolutions.co, operated by Entity Solutions LLC) that passes Premium VIN report and marketplace search requests to those services, so their keys never ship inside the app. To make sure a request really comes from the Deal Guard app, your device uses Apple's App Attest, which creates a key that stays on your device; our server keeps only its public half. What the server keeps:</p>
+<p>Deal Guard runs a small server (dealguard-api.entitysolutions.co, operated by Entity Solutions LLC) that passes history report, plate, auction record and marketplace search requests to those services, so their keys never ship inside the app. To make sure a request really comes from the Deal Guard app, your device uses Apple's App Attest, which creates a key that stays on your device; our server keeps only its public half. What the server keeps:</p>
 <ul>
-<li>For each Premium VIN report purchase, Apple's purchase ID and the VIN it was used on, so one purchase can't be used twice. Apple's purchase record does not include your name, Apple ID, or payment details.</li>
+<li>For each history report purchase, Apple's purchase ID and the VIN it was used on, so one purchase can't be used twice, plus the car's name and the provider's report reference so you can open the report again. Apple's purchase record does not include your name, Apple ID, or payment details.</li>
+<li>For a CARFAX or AutoCheck report that was bought, the report itself (the PDF) and a summary of it read by our server, so you can download it again for free. We also reuse that copy for a later buyer of the same VIN, for up to a year, as long as the provider shows no new records for the car since it was run. The app shows the date each report was run. The copy is about the car and carries nothing about who bought it.</li>
 <li>For your free first car, the VIN you chose, tied to the app's App Attest key, so the free car can only be claimed once. Apple's DeviceCheck also marks this iPhone as having used its free car. Apple stores that mark, and we never see a device identifier.</li>
+<li>For a plate you look up, the VIN it matched, stored under a one-way code made from the plate and state with a secret key (never the plate itself), deleted after 30 days.</li>
+<li>For a VIN whose auction records were opened, those sale records, so the next request for the same car doesn't fetch them again.</li>
+<li>How many auction records were opened under each subscription or Shopping Pass, keyed by Apple's purchase ID, to keep each plan within its allowance. Deleted after a year.</li>
+<li>Apple's notices that a purchase was refunded or revoked (the purchase ID and product), so a refunded purchase stops working. If Apple asks us about a refund request, we may tell Apple whether the purchase was delivered and used (for example, whether its report was opened). We send Apple nothing else about you.</li>
+<li>The app's random install code, the ad campaign Apple reported for it (or that it didn't come from an ad), and the product, price and date of purchases made with it. See "Ads and how we measure them" below.</li>
 <li>Daily request counts per device and per IP address, used only to stop abuse, deleted after 30 days.</li>
 </ul>
-<p>It does not keep your search terms, your location, or the reports themselves.</p>
+<p>It does not keep your search terms, your location, or your NMVTIS reports.</p>
+<h2>Ads and how we measure them</h2>
+<p>We advertise Deal Guard in Apple's App Store search results. To learn which of those ads are worth paying for:</p>
+<ul>
+<li>When you first open the app, it asks Apple whether you came from one of our App Store search ads. If you did, Apple tells our server which ad campaign, ad group and search keyword it was, the country, and when you tapped the ad. Apple doesn't tell us who you are, and we get no personal data from it.</li>
+<li>The first time it runs, the app makes a random install code. It's stored only on this iPhone (it isn't synced to iCloud) and isn't tied to your name, your Apple ID or your phone's advertising identifier. When you buy something in the app, Apple's purchase record carries this code, so our server can count which ads lead to purchases and how much they bring in. It keeps the code, the ad details above, and for each purchase the product, the price and the date. The app also sends the code with its requests to our server, so we can add up what the paid data each install uses (reports, auction records, marketplace searches) costs us.</li>
+<li>We don't use advertising or tracking tools from other companies, we don't use your phone's advertising identifier, and we don't track you across other companies' apps or websites. None of this is shared with or sold to anyone.</li>
+</ul>
 <h2>Camera, location, and notifications</h2>
 <ul>
-<li><strong>Camera</strong> is used to scan a VIN and, if you use the Fee Scan, to photograph the dealer's contract. Both are read on your device. The images are never uploaded, and the contract photo is not saved; only the fee breakdown is.</li>
+<li><strong>Camera</strong> is used to scan a VIN or a license plate and, if you use the Fee Scan, to photograph the dealer's contract. These are read on your device. The images are never uploaded, and the contract photo is not saved; only the fee breakdown is.</li>
 <li><strong>Location / ZIP</strong> is used only to find local listings and estimate taxes and fees.</li>
 <li><strong>Notifications</strong>, if you allow them, are used to alert you to new matching listings and price drops.</li>
 </ul>
 <h2>Payments</h2>
 <p>Subscriptions and one-time purchases are handled by Apple through the App Store. We never see your card or Apple ID. Apple's privacy policy governs that transaction.</p>
 <h2>Deleting your data</h2>
-<p>You can erase everything at any time in Settings → "Delete all local data." That clears the on-device database, cached reports, and app settings. If iCloud sync is on, deleting on one device removes it from your other devices too.</p>
+<p>You can erase everything at any time in Settings → "Delete all local data." That clears the on-device database, saved reports, and app settings. If iCloud sync is on, deleting on one device removes it from your other devices too. Two small items stay in your iCloud Keychain after that, on purpose: the VIN your free first car went to, and the purchase dates of any Shopping Pass. They stop the free car being claimed twice and let a pass you paid for keep working after a reinstall. The app's random install code also stays in this iPhone's Keychain, so a reinstall isn't counted as a new install. Our server's records (above) are tied to Apple purchase IDs, App Attest keys and that random code, not to you; email us if you'd like them removed.</p>
 <h2>Children</h2>
 <p>Deal Guard is not directed to children under 13 and does not knowingly collect data from them.</p>
 <h2>Changes</h2>
