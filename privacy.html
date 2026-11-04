@@ -63,14 +63,14 @@
 <h2>What we send to third parties, and why</h2>
 <p>To produce a report or listings, the app sends the minimum needed to these services, directly from your device unless noted:</p>
 <ul>
-<li><strong>NHTSA and the EPA</strong> (U.S. government): the VIN or year, make and model, to look up recalls, complaints, crash-test ratings, and fuel economy.</li>
+<li><strong>NHTSA and the EPA</strong> (U.S. government): the VIN or year, make and model, to look up recalls, complaints, crash-test ratings, and fuel economy. Cars you've saved are re-checked for new recalls the same way, by year, make and model.</li>
 <li><strong>Vehicle-listing sources</strong> (for example MarketCheck, eBay, and public marketplace pages): your search terms and ZIP to find matching listings. In current versions of the app, Facebook Marketplace, eBay, OfferUp, and MarketCheck searches go through our server, which sends your search terms and your ZIP or its approximate map location.</li>
 </ul>
 <p>Deal evaluations, the contract Fee Scan, message drafts and the listing chat run entirely on your iPhone (the drafts and chat use Apple's on-device model where your phone has it) and send nothing anywhere.</p>
 <ul>
 <li><strong>Our vehicle history report provider</strong>: when you open a car's report, its VIN goes through our server to our report provider for a free check of whether a CARFAX or AutoCheck report exists for it and how many records it has, so the app can show you before you buy. If you purchase a full history report and redeem it, the VIN you chose is sent the same way to generate that report. Our providers may process VINs outside the United States. Nothing is bought for a VIN you don't redeem a credit on.</li>
 <li><strong>License plate lookup</strong>: if you look a car up by plate, the plate number and state go through our server to our vehicle history provider, which answers with the VIN on file. They may process it outside the United States. If you scan a plate with the camera, the picture is read on your device and only the plate number and state are sent.</li>
-<li><strong>Salvage auction records</strong>: the VIN of the report you're viewing goes through our server to the same provider to check for Copart or IAAI sale records, and, when you open them, to fetch the sale details. The auction photos then load from the auction's own image servers.</li>
+<li><strong>Salvage auction records</strong>: the VIN of the report you're viewing goes through our server to the same provider to check for Copart or IAAI sale records, and, when you open them, to fetch the sale details. Photos that come inside the record are stored on our server and load from it; any others load from the auction's own image servers.</li>
 <li><strong>Sending a car to a friend</strong>: when you use "Send to a friend", you pick who gets the message. Its link carries only that car's VIN, price, mileage and name, placed after a "#" in the link, a part a browser never sends to a server. When your friend opens the link, our server sends back the same page it sends everyone; the page reads the car from the link on their device. We don't receive or keep the car's details, or anything about you or your friend. How many cars you've sent is counted on your phone only.</li>
 </ul>
 <p>We do not attach your name or an account to these requests, because there isn't one.</p>
@@ -81,7 +81,8 @@
 <li>For a CARFAX or AutoCheck report that was bought, the report itself (the PDF) and a summary of it read by our server, so you can download it again for free. We also reuse that copy for a later buyer of the same VIN, for up to a year, as long as the provider shows no new records for the car since it was run. The app shows the date each report was run. The copy is about the car and carries nothing about who bought it.</li>
 <li>For your free first car, the VIN you chose, tied to the app's App Attest key, so the free car can only be claimed once. Apple's DeviceCheck also marks this iPhone as having used its free car. Apple stores that mark, and we never see a device identifier.</li>
 <li>For a plate you look up, the VIN it matched, stored under a one-way code made from the plate and state with a secret key (never the plate itself), deleted after 30 days.</li>
-<li>For a VIN whose auction records were opened, those sale records, so the next request for the same car doesn't fetch them again.</li>
+<li>For a VIN whose auction records were opened, those sale records and their photos, so the next request for the same car doesn't fetch them again.</li>
+<li>For a VIN that was checked, the answer to the free report and auction check (which sources have the car and how many records), for up to 7 days, shared by everyone so the same car isn't checked twice. It doesn't say who asked. We also log when each check went out, without the VIN, for 30 days.</li>
 <li>How many auction records were opened under each subscription or Shopping Pass, keyed by Apple's purchase ID, to keep each plan within its allowance. Deleted after a year.</li>
 <li>Apple's notices that a purchase was refunded or revoked (the purchase ID and product), so a refunded purchase stops working. If Apple asks us about a refund request, we may tell Apple whether the purchase was delivered and used (for example, whether its report was opened). We send Apple nothing else about you.</li>
 <li>The app's random install code, the ad campaign Apple reported for it (or that it didn't come from an ad), and the product, price and date of purchases made with it. See "Ads and how we measure them" below.</li>
@@ -99,7 +100,7 @@
 <ul>
 <li><strong>Camera</strong> is used to scan a VIN or a license plate and, if you use the Fee Scan, to photograph the dealer's contract. These are read on your device. The images are never uploaded, and the contract photo is not saved; only the fee breakdown is.</li>
 <li><strong>Location / ZIP</strong> is used only to find local listings and estimate taxes and fees.</li>
-<li><strong>Notifications</strong>, if you allow them, are used to alert you to new matching listings and price drops.</li>
+<li><strong>Notifications</strong>, if you allow them, are used to alert you to new matching listings, price drops, and new recalls on cars you've saved or own.</li>
 </ul>
 <h2>Payments</h2>
 <p>Subscriptions and one-time purchases are handled by Apple through the App Store. We never see your card or Apple ID. Apple's privacy policy governs that transaction.</p>
